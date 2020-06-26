@@ -1,0 +1,10 @@
+{% extends "base.html.twig" %}
+
+{% block title "update the slide" %}
+
+{% block body %}
+    <h1>Modification de l'article</h1>
+
+    {{ include ("slide/_form.html.twig", {'button_label': 'Enregistrer les modificatioons'}) }}
+
+{% endblock %}

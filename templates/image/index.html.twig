@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Image index{% endblock %}
+
+{% block body %}
+    <h1>Image index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>ImageName</th>
+                <th>Createdone_at</th>
+                <th>Updatedone_at</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for image in images %}
+            <tr>
+                <td>{{ image.id }}</td>
+                <td>{{ image.imageName }}</td>
+                <td>{{ image.createdoneAt ? image.createdoneAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ image.updatedoneAt ? image.updatedoneAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('image_show', {'id': image.id}) }}">show</a>
+                    <a href="{{ path('image_edit', {'id': image.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('image_new') }}" class="btn btn-info float-left rounded-pill">Create new</a>
+    <a href="{{ path('image.slide') }}" class="btn btn-info float-right">Voir le carousel</a>
+{% endblock %}

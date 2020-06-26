@@ -1,0 +1,12 @@
+{{ form_start(form) }}
+    <div class="container">
+        <div class="row">
+            <div class="col-3"> {{ form_row(form.imageFileUn) }} </div>
+            <div class="col-3"> {{ form_row(form.imageFileDeux) }} </div>
+            <div class="col-3"> {{ form_row(form.imageFileTrois) }} </div>
+            <div class="col-3"> {{ form_row(form.alt) }} </div>
+
+            <button class="btn btn-success"> {{ button_label|default('Ajouter') }} </button>
+        </div>
+    </div>
+{{ form_end(form) }}
