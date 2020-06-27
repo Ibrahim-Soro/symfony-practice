@@ -14,6 +14,10 @@
 						<p> {{ article.content | raw }} </p>
 						<a href="{{ path('blog_show', {'id': article.id}) }}" class="btn btn-primary">Lire la suire</a>
 					</div>
+				{% else %}
+					<div>
+						Aucun article n'est disponible pour le moment
+					</div>
 				{% endfor %}
 			</article>
 	</div>
